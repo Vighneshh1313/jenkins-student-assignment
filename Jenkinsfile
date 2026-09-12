@@ -19,20 +19,27 @@ pipeline {
 
     }
 
-    stages {
+    stage('Information') {
 
-        stage('Information') {
+    steps {
 
-            steps {
+        echo "Application: ${APP_NAME}"
 
-                echo "Application: ${APP_NAME}"
-                echo "Version: ${VERSION}"
-                echo "Environment: ${params.DEPLOY_ENV}"
-                echo "Build Number: ${BUILD_NUMBER}"
+        echo "Version: ${VERSION}"
 
-            }
+        echo "Environment: ${params.DEPLOY_ENV}"
 
-        }
+        echo "Build Number: ${BUILD_NUMBER}"
+
+        echo "Job Name: ${JOB_NAME}"
+
+        echo "Workspace: ${WORKSPACE}"
+
+        echo "Build URL: ${BUILD_URL}"
+
+    }
+
+}
 
 
         stage('Build') {
