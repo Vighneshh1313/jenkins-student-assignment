@@ -46,15 +46,19 @@ pipeline {
         }
 
 
-        stage('Test') {
+       stage('Test') {
 
-            steps {
+    steps {
 
-                echo 'Running tests...'
+        echo 'Running tests...'
 
-            }
+        error 'Test failed!'
 
-        }
+    }
+
+}
+
+}
 
 
         stage('Deploy') {
